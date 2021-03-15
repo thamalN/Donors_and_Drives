@@ -7,15 +7,11 @@
     tools:context=".editDocAcc">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar8"
-        android:layout_width="410dp"
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
         android:layout_height="66dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
         android:layout_marginBottom="668dp"
-        android:background="#CC2F2F"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,23 +20,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="58dp"
-        android:layout_height="64dp"
-        app:srcCompat="@drawable/abc_vector_test"
-        tools:ignore="MissingConstraints" />
-
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="104dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="561dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar6">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
         <ImageView
             android:id="@+id/imageView10"
@@ -62,8 +54,10 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="408dp"
+        android:layout_width="0dp"
         android:layout_height="563dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_weight="1"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,18 +77,20 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <EditText
                     android:id="@+id/name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
@@ -113,16 +109,17 @@
 
                 <TextView
                     android:id="@+id/textView8"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Gender"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <EditText
                     android:id="@+id/gender"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
@@ -144,16 +141,17 @@
 
                 <TextView
                     android:id="@+id/textView9"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Address"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <EditText
                     android:id="@+id/address"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
@@ -175,9 +173,10 @@
 
                 <TextView
                     android:id="@+id/textView10"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:inputType="number"
                     android:text="Contact Details"
@@ -185,9 +184,10 @@
 
                 <EditText
                     android:id="@+id/contact"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:ems="10"
                     android:inputType="number|textPersonName" />
             </LinearLayout>
@@ -206,18 +206,20 @@
 
                 <TextView
                     android:id="@+id/textView11"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Email"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <EditText
                     android:id="@+id/email"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:ems="10"
                     android:inputType="textPersonName" />
             </LinearLayout>
@@ -236,16 +238,17 @@
 
                 <TextView
                     android:id="@+id/textView12"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Working Hospital"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
                 <EditText
                     android:id="@+id/hospital"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
@@ -265,7 +268,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
-                android:background="#CC2F2F"
+                android:background="@color/colorPrimary"
                 android:text="Save Changes"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />

@@ -14,21 +14,13 @@
         android:layout_marginLeft="1dp"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="9dp"
-        android:background="#CC2F2F"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="43dp"
-        android:layout_height="51dp"
-        app:srcCompat="@drawable/navigation"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="3dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -61,7 +53,7 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:text="Total Downloads x"
-                android:textColor="#C32727"
+                android:textColor="@color/colorPrimary"
                 android:textSize="30sp" />
         </androidx.cardview.widget.CardView>
 
@@ -82,7 +74,7 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:text="Users Online x"
-                android:textColor="#C32727"
+                android:textColor="@color/colorPrimary"
                 android:textSize="30sp" />
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -117,16 +109,16 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:text="Ongoing Campaigns x"
-                android:textColor="#C32727"
+                android:textColor="@color/colorPrimary"
                 android:textSize="30sp" />
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="426dp"
-        android:layout_height="287dp"
-        android:layout_marginTop="7dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,10 +129,10 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:background="#CC2F2F"
-            android:shadowColor="#FFFFFF"
+            android:background="@color/colorPrimary"
             android:text="Notifications"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -149,9 +141,10 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:background="#CC2F2F"
+            android:background="@color/colorPrimary"
             android:text="Tasks"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -160,9 +153,10 @@
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:background="#CC2F2F"
+            android:background="@color/colorPrimary"
             android:text="Manage User Accounts"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
@@ -171,9 +165,10 @@
             android:id="@+id/button11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
             android:layout_weight="1"
-            android:background="#CC2F2F"
+            android:background="@color/colorPrimary"
             android:text="Log Out"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />

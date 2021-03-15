@@ -7,9 +7,11 @@
     tools:context=".deleteDocAcc">
 
     <LinearLayout
-        android:layout_width="414dp"
+        android:layout_width="0dp"
         android:layout_height="317dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="159dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="255dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +42,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="20dp"
                 android:layout_weight="1"
-                android:background="#CC2F2F"
+                android:background="@color/colorPrimary"
                 android:text="Yes"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
@@ -52,7 +54,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_margin="20dp"
                 android:layout_weight="1"
-                android:background="#CC2F2F"
+                android:background="@color/colorPrimary"
                 android:text="No"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />

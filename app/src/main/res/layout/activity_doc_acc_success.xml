@@ -20,6 +20,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_weight="2"
             android:orientation="horizontal">
 
@@ -48,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="60dp"
             android:layout_weight="1"
-            android:background="#CC2F2F"
+            android:background="@color/colorPrimary"
             android:text="Done"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
