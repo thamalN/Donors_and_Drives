@@ -3,12 +3,31 @@ package com.example.donorsanddrives;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
+
+import com.android.volley.*;
+import com.android.volley.toolbox.*;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class searchDocId extends AppCompatActivity {
+    TableLayout tableLayout;
+    String record;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +36,126 @@ public class searchDocId extends AppCompatActivity {
 
         ImageButton button = findViewById(R.id.imageButton);
 
+        tableLayout = findViewById(R.id.table);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                func();
+                try {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
+                    loggedIn();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
 
-    public void func() {
-        Intent intent = new Intent(this, docMain.class);
-        startActivity(intent);
+    public void loggedIn() throws IOException, JSONException {
+        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/searchDoctor";
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        EditText id;
+        id = findViewById(R.id.editTextTextPersonName6);
+
+        final String Id;
+        Id = id.getText().toString();
+
+        StringRequest jsonObjectRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray jsonArray = new JSONArray(response);
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        final JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                        String user_id = jsonObject.getString("user_id");
+                        String name = jsonObject.getString("name");
+                        String gender = jsonObject.getString("gender");
+                        String regDate = jsonObject.getString("regDate");
+                        String street_no = jsonObject.getString("street_no");
+                        String street = jsonObject.getString("street");
+                        String city = jsonObject.getString("city");
+                        String province = jsonObject.getString("province");
+                        String contact = jsonObject.getString("contact");
+                        String email = jsonObject.getString("email");
+                        String hospital = jsonObject.getString("hospital");
+
+                        record = i + 1 + ") " +
+                                "User Id - " + user_id + "\n" +
+                                "     Name - " + name + "\n" +
+                                "     Gender - " + gender + "\n" +
+                                "     Registered Date - " + regDate + "\n" +
+                                "     Address - " + street_no + ", " + street + ", " + city + ", " + province + "\n" +
+                                "     Contact - " + contact + "\n" +
+                                "     Email - " + email + "\n" +
+                                "     Hospital - " + hospital + "\n\n";
+
+                        final TableRow tableRow = new TableRow(getApplicationContext());
+                        final TextView textView = new TextView(getApplicationContext());
+
+                        textView.setText(record);
+                        tableRow.addView(textView);
+                        tableLayout.addView(tableRow);
+
+                        tableRow.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                try {
+
+                                    JSONObject jsonObject1 = new JSONObject(jsonObject.toString());
+
+                                    SharedPreferences sharedPreferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString("details", jsonObject1.toString());
+                                    editor.apply();
+
+                                    Intent intent = new Intent(getApplicationContext(), docMain.class);
+                                    startActivity(intent);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }) {
+
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return Id == null ? null : Id.getBytes("utf-8");
+                } catch (UnsupportedEncodingException uee) {
+                    VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", Id, "utf-8");
+                    return null;
+                }
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<>();
+                headers.put("Content-Type", "text/plain");
+                return headers;
+            }
+
+        };
+
+        queue.add(jsonObjectRequest);
 
     }
 }

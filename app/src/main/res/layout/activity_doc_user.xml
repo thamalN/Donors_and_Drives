@@ -8,14 +8,10 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar5"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="66dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
         android:layout_marginBottom="668dp"
-        android:background="#CC2F2F"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,18 +28,18 @@
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
-        android:layout_width="407dp"
+        android:layout_width="0dp"
         android:layout_height="288dp"
-        android:layout_marginTop="131dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="247dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar5">
+        app:layout_constraintStart_toStartOf="parent">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -53,24 +49,24 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Enter Password"
-            android:inputType="textPersonName" />
+            android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/password2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Confirm Password"
-            android:inputType="textPersonName" />
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/button9"
@@ -78,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:background="#CC2F2F"
+            android:background="@color/colorPrimary"
             android:text="Next"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
