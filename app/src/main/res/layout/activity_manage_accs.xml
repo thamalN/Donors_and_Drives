@@ -6,29 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".manage_accs">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar10"
-        android:layout_width="0dp"
-        android:layout_height="66dp"
-        android:layout_marginBottom="668dp"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_width="375dp"
+        android:layout_height="272dp"
+        android:layout_marginTop="122dp"
+        android:layout_marginBottom="209dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar10">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView7"

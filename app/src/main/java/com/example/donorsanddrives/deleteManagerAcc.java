@@ -24,12 +24,12 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class deleteDocAcc extends AppCompatActivity {
+public class deleteManagerAcc extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_doc_acc);
+        setContentView(R.layout.activity_delete_manager_acc);
 
         Button button = findViewById(R.id.button14);
         Button button2 = findViewById(R.id.button15);
@@ -64,13 +64,13 @@ public class deleteDocAcc extends AppCompatActivity {
     }
 
     public void func(final String id) {
-        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/deleteDoctor";
+        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/deleteManager";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String s) {
-                Intent intent = new Intent(getApplicationContext(), doctor_acc.class);
+                Intent intent = new Intent(getApplicationContext(), managerAcc.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
@@ -104,7 +104,7 @@ public class deleteDocAcc extends AppCompatActivity {
     }
 
     public void func2() {
-        Intent intent = new Intent(this, docMain.class);
+        Intent intent = new Intent(this, managerMain.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
 

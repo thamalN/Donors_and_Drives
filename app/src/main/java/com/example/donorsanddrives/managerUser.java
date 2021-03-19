@@ -20,13 +20,13 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class docUser extends AppCompatActivity {
+public class managerUser extends AppCompatActivity {
     String username, password, password2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doc_user);
+        setContentView(R.layout.activity_manager_user);
 
         Button button = findViewById(R.id.button9);
 
@@ -38,7 +38,7 @@ public class docUser extends AppCompatActivity {
     }
 
     public void func() {
-        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/addUser/Doctor";
+        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/addUser/Manager";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         EditText editText1, editText2, editText3;
@@ -60,7 +60,7 @@ public class docUser extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String s) {
-                    Intent intent = new Intent(getApplicationContext(), docAccSuccess.class);
+                    Intent intent = new Intent(getApplicationContext(), managerAccSuccess.class);
                     startActivity(intent);
                 }
             }, new Response.ErrorListener() {

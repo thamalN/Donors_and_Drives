@@ -12,12 +12,12 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class docMain extends AppCompatActivity {
+public class managerMain extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doc_main);
+        setContentView(R.layout.activity_manager_main);
 
         Button button = findViewById(R.id.button10);
         Button button2 = findViewById(R.id.button12);
@@ -56,17 +56,17 @@ public class docMain extends AppCompatActivity {
     }
 
     public void func() {
-        Intent intent = new Intent(this, viewDocAcc.class);
+        Intent intent = new Intent(this, viewManagerAcc.class);
         startActivity(intent);
     }
 
     public void func2() {
-        Intent intent = new Intent(this, editDocAcc.class);
+        Intent intent = new Intent(this, editManagerAcc.class);
         startActivity(intent);
     }
 
     public void func3() {
-        Intent intent = new Intent(this, deleteDocAcc.class);
+        Intent intent = new Intent(this, deleteManagerAcc.class);
         startActivity(intent);
     }
 }

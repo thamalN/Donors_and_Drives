@@ -26,14 +26,14 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class searchDocId extends AppCompatActivity {
+public class searchManagerId extends AppCompatActivity {
     TableLayout tableLayout;
     String record;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_doc_id);
+        setContentView(R.layout.activity_search_manager_id);
 
         ImageButton button = findViewById(R.id.imageButton);
 
@@ -42,16 +42,16 @@ public class searchDocId extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    tableLayout.removeAllViews();
-                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
-                    inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
-                    loggedIn();
+                tableLayout.removeAllViews();
+                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0);
+                loggedIn();
             }
         });
     }
 
     public void loggedIn() {
-        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/searchDoctor";
+        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/searchManager";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         EditText id;
@@ -68,32 +68,23 @@ public class searchDocId extends AppCompatActivity {
                     JSONArray jsonArray = new JSONArray(response);
 
                     if(jsonArray.length() == 0) {
-                        Toast.makeText(searchDocId.this, "No records found!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(searchManagerId.this, "No records found!", Toast.LENGTH_SHORT).show();
                     } else {
                         for (int i = 0; i < jsonArray.length(); i++) {
                             final JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                             String user_id = jsonObject.getString("user_id");
                             String name = jsonObject.getString("name");
-                            String gender = jsonObject.getString("gender");
                             String regDate = jsonObject.getString("regDate");
-                            String street_no = jsonObject.getString("street_no");
-                            String street = jsonObject.getString("street");
-                            String city = jsonObject.getString("city");
-                            String province = jsonObject.getString("province");
-                            String contact = jsonObject.getString("contact");
                             String email = jsonObject.getString("email");
-                            String hospital = jsonObject.getString("hospital");
+                            String contact = jsonObject.getString("contact");
 
                             record = i + 1 + ") " +
                                     "User Id - " + user_id + "\n" +
                                     "     Name - " + name + "\n" +
-                                    "     Gender - " + gender + "\n" +
                                     "     Registered Date - " + regDate + "\n" +
-                                    "     Address - " + street_no + ", " + street + ", " + city + ", " + province + "\n" +
-                                    "     Contact - " + contact + "\n" +
                                     "     Email - " + email + "\n" +
-                                    "     Hospital - " + hospital + "\n\n";
+                                    "     Contact - " + contact + "\n\n";
 
                             final TableRow tableRow = new TableRow(getApplicationContext());
                             final TextView textView = new TextView(getApplicationContext());
@@ -113,7 +104,7 @@ public class searchDocId extends AppCompatActivity {
                                         editor.putString("details", jsonObject1.toString());
                                         editor.apply();
 
-                                        Intent intent = new Intent(getApplicationContext(), docMain.class);
+                                        Intent intent = new Intent(getApplicationContext(), managerMain.class);
                                         startActivity(intent);
 
                                     } catch (JSONException e) {
