@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".viewDonLead">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="410dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="668dp"
+        android:background="#CC2F2F"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="58dp"
+        android:layout_height="64dp"
+        app:srcCompat="@drawable/abc_vector_test" />
+
+    <LinearLayout
+        android:layout_width="416dp"
+        android:layout_height="279dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="236dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
+
+
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:shrinkColumns="*"
+            android:stretchColumns="*">
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textSize="25sp"
+                android:text="Donor Leaderboard"
+                android:textColor="#CC2F2F"
+                android:gravity="center"
+                android:layout_span="6"></TextView>
+        </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/TextView05"
+                    android:text="Rank"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+
+                <TextView
+                    android:id="@+id/TextView04"
+                    android:text="Donor"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+
+                <TextView
+                    android:id="@+id/TextView03"
+                    android:text="Total Donations"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:text="Points"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+
+            </TableRow>
+
+            <TableRow
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent">
+            <TextView
+                android:text="1"
+                android:id="@+id/textView2"
+                android:textStyle="bold"></TextView>
+            <TextView
+                android:id="@+id/textView3"
+                android:text="Thamal"
+                android:gravity="center_horizontal"></TextView>
+            <TextView
+                android:text="2.5l"
+                android:id="@+id/textView4"
+                android:gravity="center_horizontal"></TextView>
+            <TextView
+                android:text="343pts"
+                android:id="@+id/textView5"
+                android:gravity="center_horizontal"></TextView>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent">
+            <TextView
+                android:text="2"
+                android:id="@+id/textView2"
+                android:textStyle="bold"></TextView>
+            <TextView
+                android:text="Sunera"
+                android:id="@+id/textView3"
+                android:gravity="center_horizontal"></TextView>
+            <TextView
+                android:text="1.9l"
+                android:id="@+id/textView4"
+                android:gravity="center_horizontal"></TextView>
+            <TextView
+                android:text="231pts"
+                android:id="@+id/textView5"
+                android:gravity="center_horizontal"></TextView>
+
+        </TableRow>
+        </TableLayout>
+
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
