@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".donorHome">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:orientation="vertical">
+
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Username"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/donorid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="Donor ID:xxxxxx" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/user" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="416dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="50dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:text="View Donation History" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:text="View Donor Leaderboard" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="3dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:text="View Blood Drives" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="400dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:layout_marginTop="3dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
+            android:text="Settings" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@color/grey"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
