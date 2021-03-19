@@ -30,7 +30,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="center_vertical"
-            android:hint="Search Doctor Info"
+            android:hint="Search Campaign Manager Info"
             android:inputType="textPersonName"
             android:textSize="24sp" />
 

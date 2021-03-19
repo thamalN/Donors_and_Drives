@@ -6,41 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".admin_home">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="423dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="9dp"
-        android:background="@color/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="408dp"
-        android:layout_height="185dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="484dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:padding="10dp"
             app:cardBackgroundColor="#FFFFFF"
             app:cardElevation="15dp"
             app:cardUseCompatPadding="true">
@@ -50,19 +31,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
                 android:gravity="center"
+                android:padding="7dp"
                 android:text="Total Downloads x"
                 android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                app:autoSizeTextType="uniform" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:padding="10dp"
             app:cardElevation="15dp"
             app:cardUseCompatPadding="true">
 
@@ -71,19 +51,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
                 android:gravity="center"
+                android:padding="7dp"
                 android:text="Users Online x"
                 android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                app:autoSizeTextType="uniform" />
         </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="406dp"
-        android:layout_height="185dp"
-        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="294dp"
@@ -106,11 +87,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="20dp"
                 android:gravity="center"
+                android:padding="7dp"
                 android:text="Ongoing Campaigns x"
                 android:textColor="@color/colorPrimary"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                app:autoSizeTextType="uniform" />
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
