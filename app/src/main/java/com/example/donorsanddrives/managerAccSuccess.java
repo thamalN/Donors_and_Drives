@@ -7,12 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class docAccSuccess extends AppCompatActivity {
+public class managerAccSuccess extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doc_acc_success);
+        setContentView(R.layout.activity_manager_acc_success);
 
         Button button = findViewById(R.id.button8);
 
