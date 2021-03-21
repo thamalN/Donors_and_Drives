@@ -50,7 +50,7 @@ public class donorHome extends AppCompatActivity implements PopupMenu.OnMenuItem
             public void onClick(View v) {
                 PopupMenu popup = new PopupMenu(donorHome.this, v);
                 popup.setOnMenuItemClickListener(donorHome.this);
-                popup.inflate(R.menu.popup_menu);
+                popup.inflate(R.menu.popup_menu_2);
                 popup.show();
             }
         });

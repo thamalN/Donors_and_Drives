@@ -65,7 +65,12 @@ public class MainActivity2 extends AppCompatActivity {
                         if (flag == 1) {
                             Intent intent = new Intent(getApplicationContext(), admin_home.class);
                             startActivity(intent);
-                        } else {
+                        }
+                        else if (flag == 2) {
+                            Intent intent = new Intent(getApplicationContext(), DoctorHome.class);
+                            startActivity(intent);
+                        }
+                        else {
                             Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorHome">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="100dp"
+            android:background="@android:color/white"
+            android:onClick="toActivity4"
+            android:text="Blood Stocks"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/white"
+            android:onClick="toSearchDoc"
+            android:text="Doctors"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/white"
+            android:onClick="toSearchCamp"
+            android:text="Campaigns"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/white"
+            android:onClick="toSearchCM"
+            android:text="Campaign Managers"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/white"
+            android:onClick="toSearchStation"
+            android:text="Stations"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+        <Button
+            android:id="@+id/btnShow"
+            android:layout_width="400dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:background="@android:color/white"
+            android:text="Settings"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_navigation"
+        app:itemBackground="@android:color/white"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu_navigation"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>
