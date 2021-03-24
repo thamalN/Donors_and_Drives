@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="Donor ID:xxxxxx" />
+        android:text="Donor ID:" />
 
     <ImageView
         android:id="@+id/avatar"

@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".donQuiz">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:scrollbars="none">
+
 
     <LinearLayout
         android:layout_width="412dp"
@@ -16,27 +25,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:text="1)Question#1"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center_vertical"
-            android:hint="Answer"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView1"
@@ -44,43 +32,215 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:text="2)Question#2"
+            android:text="#1: Are you between the ages 18 and 60?"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName1"
-            android:layout_width="299dp"
+        <RadioGroup
+            android:id="@+id/answers1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center_vertical"
-            android:hint="Answer"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:text="3)Question#3"
+            android:text="#2: Have you had a tattoo or piercing in the last 3 months?"
             android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="299dp"
+        <RadioGroup
+            android:id="@+id/answers2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:ems="10"
-            android:gravity="center_vertical"
-            android:hint="Answer"
-            android:inputType="textPersonName"
+            android:text="#3: Have you travelled outside of Sri Lanka in the last 12 months?"
             android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/answers3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="#4: Have you had a cleaning or filling today, or dental surgery in last 72 hours?"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/answers4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="#5: Have you been pregnant or had a baby in the last 6 months?"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/answers5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="#6: Are you taking prescription medications?"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/answers6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="#7: Do you weigh more than 110 lbs?"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/answers7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="#8: Are you free from Risk Behaviours?"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/answers8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="#9: Do you have diabetes or hypertension (high blood pressure)?"
+        android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/answers9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/y9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+            <RadioButton android:id="@+id/n9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
 
         <Button
             android:id="@+id/button"
@@ -94,7 +254,10 @@
             android:text="Submit"
             android:textSize="15sp"/>
 
+
+
     </LinearLayout>
+    </ScrollView>
 
 
 
