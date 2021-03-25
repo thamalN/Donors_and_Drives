@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+
         <activity android:name=".managerAcc" />
+
         <activity android:name=".deleteManagerAcc" />
         <activity android:name=".editManagerAcc" />
         <activity android:name=".viewManagerAcc" />
@@ -35,6 +37,7 @@
         <activity android:name=".doctor_acc" />
         <activity android:name=".manage_accs" />
         <activity android:name=".admin_home" />
+
         <activity android:name=".accEditSuccess" />
         <activity android:name=".viewMedicalDetails" />
         <activity android:name=".profile" />
@@ -56,10 +59,29 @@
         <activity android:name=".viewDonLead" />
         <activity android:name=".viewBloodDrives" />
         <activity android:name=".donorHome" />
+
+
+        <activity android:name=".EditDonorMedDetails" />
+        <activity android:name=".ViewDonor" />
+        <activity android:name=".FindDonor" />
+        <activity android:name=".BloodStocks" />
+        <activity android:name=".DoctorMapsActivity" />
+        <activity android:name=".DoctorHome" />
+
+        <activity android:name=".Campaign" />
+        <activity android:name=".CM" />
+        <activity android:name=".Doctor" />
+        <activity android:name=".Station" />
+        <activity android:name=".SearchCamp" />
+        <activity android:name=".SearchCM" />
+        <activity android:name=".SearchDoc" />
+        <activity android:name=".SearchStation" />
+
         <activity
             android:name=".MainActivity2"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

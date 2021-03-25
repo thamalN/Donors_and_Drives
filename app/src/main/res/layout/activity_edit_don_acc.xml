@@ -318,7 +318,7 @@ tools:context=".editDonAcc">
     app:itemBackground="@color/grey"
     app:itemTextColor="@drawable/selector"
     app:itemIconTint="@drawable/selector"
-    app:menu="@menu/menu_navigation"
+    app:menu="@menu/menu_navigation_2"
     android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
