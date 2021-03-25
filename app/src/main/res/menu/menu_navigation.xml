@@ -4,7 +4,14 @@
     <item
         android:id="@+id/map"
         android:title="Map"
+        android:icon="@drawable/ic_dashboard" />
+
+
+    <item
+        android:id="@+id/map"
+        android:title="Map"
         android:icon="@drawable/ic_map" />
+
 
     <item
         android:id="@+id/home"
@@ -12,6 +19,11 @@
         android:icon="@drawable/ic_home" />
 
     <item
+
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_info" />
+    <item 
         android:id="@+id/donors"
         android:title="Donors"
         android:icon="@drawable/ic_donors" />

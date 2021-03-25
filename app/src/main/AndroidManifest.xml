@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".managerAcc"></activity>
+
+        <activity android:name=".managerAcc" />
+
         <activity android:name=".deleteManagerAcc" />
         <activity android:name=".editManagerAcc" />
         <activity android:name=".viewManagerAcc" />
@@ -35,6 +37,29 @@
         <activity android:name=".doctor_acc" />
         <activity android:name=".manage_accs" />
         <activity android:name=".admin_home" />
+
+        <activity android:name=".accEditSuccess" />
+        <activity android:name=".viewMedicalDetails" />
+        <activity android:name=".profile" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".userAgree" />
+        <activity android:name=".editDonAcc" />
+        <activity android:name=".viewDonHistory" />
+        <activity android:name=".donQuiz" />
+        <activity android:name=".donAccSuccess" />
+        <activity android:name=".donUser" />
+        <activity android:name=".createDonAcc" />
+        <activity android:name=".viewDonLead" />
+        <activity android:name=".viewBloodDrives" />
+        <activity android:name=".donorHome" />
+
 
         <activity android:name=".EditDonorMedDetails" />
         <activity android:name=".ViewDonor" />
