@@ -64,16 +64,26 @@ public class MainActivity2 extends AppCompatActivity {
                         int flag = object.getInt("user_flag");
                         int id = object.getInt("user_id");
 
-                        SharedPreferences sharedPreferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("user_id", String.valueOf(id));
-                        editor.apply();
+                        SharedPreferences sharedPreferences1 = getSharedPreferences("sharedPref", MODE_PRIVATE);
+                        SharedPreferences.Editor editor1 = sharedPreferences1.edit();
+                        editor1.putString("user_id", String.valueOf(id));
+                        editor1.apply();
 
                         if (flag == 1) {
                             Intent intent = new Intent(getApplicationContext(), admin_home.class);
                             startActivity(intent);
+                        } else if (flag == 3) {
+                            SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("user_id", Integer.toString(id));
+                            editor.apply();
+                            Intent intent = new Intent(getApplicationContext(), donorHome.class);
+
+                        } else if (flag == 2) {
+                          Intent intent = new Intent(getApplicationContext(), DoctorHome.class);
+                          startActivity(intent);
                         } else {
-                            Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
+                           Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -105,7 +115,6 @@ public class MainActivity2 extends AppCompatActivity {
             queue.add(stringRequest);
         }
     }
-
     @Override
     public void onResume() {
         super.onResume();

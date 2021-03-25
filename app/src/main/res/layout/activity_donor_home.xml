@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textSize="20dp"
-        android:text="Donor ID:xxxxxx" />
+        android:text="Donor ID:" />
 
     <ImageView
         android:id="@+id/avatar"
@@ -103,7 +103,7 @@
         app:itemBackground="@color/grey"
         app:itemTextColor="@drawable/selector"
         app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu_navigation"
+        app:menu="@menu/menu_navigation_2"
         android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
