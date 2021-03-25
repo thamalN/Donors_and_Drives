@@ -3,6 +3,7 @@ package com.example.donorsanddrives;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,9 +41,8 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void loggedIn() {
-        //String url = "http://192.168.1.101:8080/DonorsAndDrives_war_exploded/authentication";
 
-        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/authentication";
+        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/authentication/login";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         EditText user, pass;
@@ -62,6 +62,13 @@ public class MainActivity2 extends AppCompatActivity {
                     try {
                         JSONObject object = new JSONObject(response);
                         int flag = object.getInt("user_flag");
+                        int id = object.getInt("user_id");
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("sharedPref", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("user_id", String.valueOf(id));
+                        editor.apply();
+
                         if (flag == 1) {
                             Intent intent = new Intent(getApplicationContext(), admin_home.class);
                             startActivity(intent);
@@ -98,6 +105,7 @@ public class MainActivity2 extends AppCompatActivity {
             queue.add(stringRequest);
         }
     }
+
     @Override
     public void onResume() {
         super.onResume();
