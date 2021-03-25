@@ -42,7 +42,7 @@
         <activity android:name=".BloodStocks" />
         <activity android:name=".DoctorMapsActivity" />
         <activity android:name=".DoctorHome" />
-
+        <activity android:name=".DonationsActivity" />
         <activity android:name=".Campaign" />
         <activity android:name=".CM" />
         <activity android:name=".Doctor" />

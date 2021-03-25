@@ -16,17 +16,23 @@ import org.json.JSONObject;
 
 public class ViewDonor extends AppCompatActivity {
 
-    public void toActivity8(View v) {
+    String curDonorID = "";
+    String curDonorName = "";
+
+    public void toActivityEditMedDetails(View v) {
         startActivity(new Intent(this, EditDonorMedDetails.class));
     }
 
 
-    public void toActivity5(View v) {
-        startActivity(new Intent(this, FindDonor.class));
-    }
+//    public void toActivity5(View v) {
+//        startActivity(new Intent(this, FindDonor.class));
+//    }
 
     public void toDonationsActivity(View v) {
-        startActivity(new Intent(this, DonationsActivity.class));
+        Intent intent = new Intent(this, DonationsActivity.class);
+        intent.putExtra("curDonorID", curDonorID);
+        intent.putExtra("curDonorName", curDonorName);
+        startActivity(intent);
     }
 
 
@@ -69,6 +75,11 @@ public class ViewDonor extends AppCompatActivity {
             address.setText(donorObj.getString("street_no") + ", " + donorObj.getString("street") + ", " + donorObj.getString("city") + ", " + donorObj.getString("province"));
             contact.setText(donorObj.getString("contact"));
             email.setText(donorObj.getString("email"));
+
+
+            curDonorID = donorObj.getString("user_id");
+            curDonorName = donorObj.getString("name");
+
 
         } catch (JSONException e) {
             e.printStackTrace();
