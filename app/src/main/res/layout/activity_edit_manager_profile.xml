@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editDocAcc">
+    tools:context=".editManagerProfile">
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -34,15 +34,15 @@
             android:layout_margin="10dp"
             android:layout_weight="3"
             android:gravity="center_vertical"
-            android:text="Campaign Manager ID - "
+            android:text="User ID - "
             android:textSize="24sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout9"
-        android:layout_width="380dp"
-        android:layout_height="322dp"
+        android:layout_width="373dp"
+        android:layout_height="464dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="7dp"
@@ -99,38 +99,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="Email"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:inputType="textPersonName"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
                     android:id="@+id/textView12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -158,10 +126,42 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Email"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
             <Button
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp"
                 android:background="@color/colorPrimary"
@@ -173,4 +173,5 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

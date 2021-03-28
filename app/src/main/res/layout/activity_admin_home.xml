@@ -7,118 +7,90 @@
     tools:context=".admin_home">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="408dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="13dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        android:id="@+id/linearLayout12"
+        android:layout_width="397dp"
+        android:layout_height="391dp"
+        android:layout_marginBottom="19dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout11"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:cardBackgroundColor="#FFFFFF"
-            app:cardElevation="15dp"
-            app:cardUseCompatPadding="true">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView2"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/user"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="7dp"
-                android:text="Total Downloads x"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp"
-                app:autoSizeTextType="uniform" />
-        </androidx.cardview.widget.CardView>
+                android:layout_weight="1"
+                app:cardElevation="15dp"
+                app:cardUseCompatPadding="true">
 
-        <androidx.cardview.widget.CardView
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="Online Users  "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp"
+                    app:autoSizeTextType="none" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            app:cardElevation="15dp"
-            app:cardUseCompatPadding="true">
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView3"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/camp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:padding="7dp"
-                android:text="Users Online x"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp"
-                app:autoSizeTextType="uniform" />
-        </androidx.cardview.widget.CardView>
+                android:layout_weight="1"
+                app:cardElevation="15dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:text="Ongoing Campaigns "
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="30sp"
+                    app:autoSizeTextType="none" />
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="406dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="294dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            app:cardElevation="15dp"
-            app:cardUseCompatPadding="true">
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:gravity="center"
-                android:padding="7dp"
-                android:text="Ongoing Campaigns x"
-                android:textColor="@color/colorPrimary"
-                android:textSize="30sp"
-                app:autoSizeTextType="uniform" />
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/linearLayout11"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:text="Notifications"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
 
         <Button
             android:id="@+id/button3"
@@ -128,7 +100,7 @@
             android:layout_marginBottom="5dp"
             android:layout_weight="1"
             android:background="@color/colorPrimary"
-            android:text="Tasks"
+            android:text="Users"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 

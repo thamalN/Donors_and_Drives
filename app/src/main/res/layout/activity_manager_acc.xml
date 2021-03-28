@@ -29,7 +29,7 @@
             android:background="@color/colorPrimary"
             android:padding="10dp"
             android:shadowColor="#FFFFFF"
-            android:text="Search Campaign Manager ID"
+            android:text="Search Campaign Manager Info"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
 
