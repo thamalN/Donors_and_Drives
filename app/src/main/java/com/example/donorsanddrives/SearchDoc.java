@@ -12,11 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SearchDoc extends AppCompatActivity {
 
-    public void toDoctor(View v) {
-        startActivity(new Intent(this, Doctor.class));
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +21,7 @@ public class SearchDoc extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.donors);
+        bottomNavigationView.setSelectedItemId(R.id.profile);
 
         //perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,7 +40,7 @@ public class SearchDoc extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.donors:
+                    case R.id.profile:
                         return true;
                 }
                 return false;

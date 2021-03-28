@@ -42,7 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
     public void loggedIn() {
         //String url = "http://192.168.1.101:8080/DonorsAndDrives_war_exploded/authentication";
 
-        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/authentication";
+        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/authentication/login";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         EditText user, pass;
@@ -68,7 +68,9 @@ public class MainActivity2 extends AppCompatActivity {
                         }
                         else if (flag == 2) {
                             Intent intent = new Intent(getApplicationContext(), DoctorHome.class);
+                            intent.putExtra("user_id", object.getString("user_id"));
                             startActivity(intent);
+
                         }
                         else {
                             Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();

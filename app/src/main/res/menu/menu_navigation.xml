@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/map"
-        android:title="Map"
+        android:id="@+id/appointments"
+        android:title="Appointments"
         android:icon="@drawable/ic_map" />
 
     <item
@@ -12,8 +12,8 @@
         android:icon="@drawable/ic_home" />
 
     <item
-        android:id="@+id/donors"
-        android:title="Donors"
-        android:icon="@drawable/ic_donors" />
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile" />
 
 </menu>
