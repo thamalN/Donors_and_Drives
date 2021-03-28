@@ -1,5 +1,8 @@
 package com.example.donorsanddrives;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,9 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,37 +27,27 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditProfileActivity extends AppCompatActivity {
+public class DoctorChangeUsername extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_profile);
+        setContentView(R.layout.activity_doctor_change_username);
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
         final String user_id = sharedPreferences.getString("user_id", null);
-        final String[] Name = new String[1];
 
-//        Toast.makeText(this, user_id, Toast.LENGTH_SHORT).show();
-
-        Button save = (Button) findViewById(R.id.save);
         Button change_username = (Button) findViewById(R.id.change_username);
-        Button change_password = (Button) findViewById(R.id.change_password);
 
         TextView userID = (TextView) findViewById(R.id.user_id);
         final TextView name = (TextView) findViewById(R.id.name);
 
-        final TextView street_no = (TextView) findViewById(R.id.street_not);
-        final TextView street = (TextView) findViewById(R.id.streett);
-        final TextView city = (TextView) findViewById(R.id.cityt);
-        final TextView province = (TextView) findViewById(R.id.provincet);
-        final TextView hospital = (TextView) findViewById(R.id.hospitalt);
-        final TextView email = (TextView) findViewById(R.id.emailt);
-        final TextView contact = (TextView) findViewById(R.id.contactt);
+        final TextView new_username = (TextView) findViewById(R.id.username);
+        final TextView password = (TextView) findViewById(R.id.password);
 
         userID.setText("ID - " + user_id);
 
-        final RequestQueue queue = Volley.newRequestQueue(EditProfileActivity.this);
+        final RequestQueue queue = Volley.newRequestQueue(DoctorChangeUsername.this);
 
         String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/viewDoctorInfo/" + user_id;
 
@@ -69,15 +59,8 @@ public class EditProfileActivity extends AppCompatActivity {
                 JSONObject doctor = (JSONObject) response;
                 try {
 
-                    Name[0] = response.getString("name");
-                    name.setText("Name - " + Name[0]);
-                    street_no.setText(response.getString("street_no"));
-                    street.setText(response.getString("street"));
-                    city.setText(response.getString("city"));
-                    province.setText(response.getString("province"));
-                    hospital.setText(response.getString("hospital"));
-                    email.setText(response.getString("email"));
-                    contact.setText(response.getString("contact"));
+                    name.setText("Name - " +response.getString("name"));
+                    new_username.setText(response.getString("username"));
 
 
                 } catch (JSONException e) {
@@ -88,7 +71,7 @@ public class EditProfileActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(EditProfileActivity.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DoctorChangeUsername.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -96,16 +79,27 @@ public class EditProfileActivity extends AppCompatActivity {
         queue.add(request);
 
 
-        save.setOnClickListener(new View.OnClickListener() {
+        change_username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/editDoctorProfInfo/info";
+                String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/users/changeUsername";
 
                 StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Intent intent = new Intent(getApplicationContext(), ViewProfileDoctor.class);
+
+                        JSONObject data = null;
+                        try {
+                            data = new JSONObject(response);
+                            Toast.makeText(DoctorChangeUsername.this, data.getString("message"), Toast.LENGTH_SHORT).show();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                        Intent intent = new Intent(getApplicationContext(), EditProfileActivity.class);
                         intent.putExtra("user_id", user_id);
                         startActivity(intent);
 
@@ -113,7 +107,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(EditProfileActivity.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DoctorChangeUsername.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
                     }
                 }){
 
@@ -121,14 +115,8 @@ public class EditProfileActivity extends AppCompatActivity {
                     protected Map<String, String> getParams() {
                         Map<String, String> params = new HashMap<>();
                         params.put("user_id", user_id);
-                        params.put("email", email.getText().toString());
-                        params.put("contact", contact.getText().toString());
-                        params.put("street_no", street_no.getText().toString());
-                        params.put("street", street.getText().toString());
-                        params.put("city", city.getText().toString());
-                        params.put("province", province.getText().toString());
-                        params.put("hospital", hospital.getText().toString());
-
+                        params.put("username", new_username.getText().toString());
+                        params.put("password", password.getText().toString());
                         return params;
                     }
                     @Override
@@ -142,30 +130,14 @@ public class EditProfileActivity extends AppCompatActivity {
                 // Add the request to the RequestQueue.
                 queue.add(request);
 
-            }
-        });
-
-
-        change_username.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(getApplicationContext(), DoctorChangeUsername.class);
+                Intent intent = new Intent(getApplicationContext(), ViewProfileDoctor.class);
                 intent.putExtra("user_id", user_id);
                 startActivity(intent);
             }
         });
 
-        change_password.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), DoctorChangePassword.class);
-                intent.putExtra("user_id", user_id);
-                intent.putExtra("name", Name[0]);
-                startActivity(intent);
-            }
-        });
+
 
 
 

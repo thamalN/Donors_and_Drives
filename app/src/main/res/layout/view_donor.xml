@@ -434,36 +434,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:onClick="toActivity8"
+        android:onClick="toActivityEditMedDetails"
         android:shadowColor="#FFFFFF"
         android:text="Edit donor's medical details"
         android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:textAllCaps="false"
         android:textSize="15dp" />
-
-<!--    <Button-->
-<!--        android:layout_width="400dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:onClick="toActivity7"-->
-<!--        android:text="Mark the status"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:textSize="15dp" />-->
-
-
-<!--    <Button-->
-<!--        android:layout_width="400dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="5dp"-->
-<!--        android:onClick="toActivity9"-->
-<!--        android:text="Generate Blood Analysis Test report"-->
-<!--        android:textAllCaps="false"-->
-<!--        android:background="@color/colorPrimary"-->
-<!--        android:textColor="@android:color/white"-->
-<!--        android:textSize="15dp" />-->
 
 
         <Button

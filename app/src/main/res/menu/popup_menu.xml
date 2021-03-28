@@ -8,8 +8,6 @@
 
     <item android:id="@+id/edit_profile"
         android:title="Edit Profile" />
-    <item android:id="@+id/notifications"
-        android:title="Notifications" />
 
     <item android:id="@+id/log_out"
         android:title="Log Out" />

@@ -17,17 +17,17 @@
     android:scrollbars="none">
 
     <LinearLayout
+        android:id="@+id/donations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/donorName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:text="Donor's Username"
             android:textSize="25dp" />
 
         <TextView
@@ -36,7 +36,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Donor ID:xxxxxx"
             android:textSize="20dp" />
 
         <ImageView
@@ -54,26 +53,48 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/cid"
+                android:id="@+id/campaignid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
-                android:text="Campaign ID"
+                android:text="Drive ID"
                 android:textSize="17dp" />
 
             <TextView
-                android:id="@+id/place"
+                android:id="@+id/stationid"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="Station ID"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="Place of Donation"
+                android:text="Date"
                 android:textSize="17dp" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/time"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:text="Time"-->
+<!--                android:textSize="17dp" />-->
 
             <TextView
                 android:id="@+id/amt"
@@ -87,25 +108,26 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:orientation="horizontal">-->
 
-            <TextView
-                android:id="@+id/bloodtype"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="40dp"
-                android:text="C01"
-                android:textSize="15dp" />
+<!--            <TextView-->
+<!--                android:id="@+id/bloodtype"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginRight="40dp"-->
+<!--                android:text="C01"-->
+<!--                android:textSize="15dp" />-->
 
 
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         <View
             android:layout_width="match_parent"
@@ -225,7 +247,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="100dp"
-            android:onClick="toActivity6"
+            android:onClick="toActivityViewDonor"
             android:text="Save"
             android:textAllCaps="false"
             android:background="@color/colorPrimary"

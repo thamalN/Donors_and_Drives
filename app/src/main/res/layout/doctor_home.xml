@@ -9,83 +9,176 @@
     android:layout_height="match_parent"
     tools:context=".DoctorHome">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/drives"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text=""
+            android:textSize="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Future Blood Drives"
+            android:textSize="15dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
 
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="60dp"
+<!--        <Button-->
+<!--            android:layout_width="400dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            android:background="@android:color/white"-->
+<!--            android:onClick="toActivity4"-->
+<!--            android:text="Blood Stocks"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/colorPrimary" />-->
+
+
+<!--        <Button-->
+<!--            android:layout_width="400dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="200dp"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            android:onClick="toSearchDoc"-->
+<!--            android:text="Doctors"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@android:color/white" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="400dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:background="@android:color/white"-->
+<!--            android:onClick="toSearchCamp"-->
+<!--            android:text="Campaigns"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/colorPrimary" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="400dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:background="@android:color/white"-->
+<!--            android:onClick="toSearchCM"-->
+<!--            android:text="Campaign Managers"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/colorPrimary" />-->
+
+<!--        <Button-->
+<!--            android:layout_width="400dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            android:onClick="toSearchStation"-->
+<!--            android:text="Stations"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@android:color/white" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnShow"-->
+<!--            android:layout_width="400dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            android:text="Settings"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@android:color/white" />-->
+
+        <TextView
+            android:id="@+id/campaignid"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="100dp"
-            android:background="@android:color/white"
-            android:onClick="toActivity4"
-            android:text="Blood Stocks"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Drive ID"
+            android:textSize="15dp" />
 
-
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="60dp"
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="3dp"
-            android:background="@android:color/white"
-            android:onClick="toSearchDoc"
-            android:text="Doctors"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="55dp"
+            android:layout_marginBottom="10dp"
+            android:text="Location"
+            android:textSize="15dp" />
 
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="60dp"
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="3dp"
-            android:background="@android:color/white"
-            android:onClick="toSearchCamp"
-            android:text="Campaigns"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Date"
+            android:textSize="15dp" />
 
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="3dp"
-            android:background="@android:color/white"
-            android:onClick="toSearchCM"
-            android:text="Campaign Managers"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary" />
 
-        <Button
-            android:layout_width="400dp"
-            android:layout_height="60dp"
+        <TextView
+            android:id="@+id/start_time"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="3dp"
-            android:background="@android:color/white"
-            android:onClick="toSearchStation"
-            android:text="Stations"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:text="Start Time"
+            android:textSize="15dp" />
 
-        <Button
-            android:id="@+id/btnShow"
-            android:layout_width="400dp"
-            android:layout_height="60dp"
+        <TextView
+            android:id="@+id/end_time"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="3dp"
-            android:background="@android:color/white"
-            android:text="Settings"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="End Time"
+            android:textSize="15dp" />
+
+
+</LinearLayout>
 
     </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

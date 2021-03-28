@@ -1,5 +1,8 @@
 package com.example.donorsanddrives;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -7,18 +10,19 @@ import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
 import android.util.TypedValue;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,9 +30,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+public class Appointments extends AppCompatActivity {
 
-public class DoctorHome extends AppCompatActivity{
-    
+    ImageButton search;
+    EditText dataInput;
+    TextView textID;
+
     public int dpTOpx(float dp){
         //float dp = 10f;
         Resources r = getResources();
@@ -41,40 +48,61 @@ public class DoctorHome extends AppCompatActivity{
     }
 
 
-//    public void toSearchDoc(View v) { startActivity(new Intent(this, SearchDoc.class)); }
-//
-//    public void toSearchStation(View v) { startActivity(new Intent(this, SearchStation.class)); }
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.doctor_home);
+        setContentView(R.layout.activity_appointments);
 
-        TextView textID = (TextView) findViewById(R.id.user_id);
-
-//        Button btn = (Button) findViewById(R.id.btnShow);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                PopupMenu popup = new PopupMenu(DoctorHome.this, v);
-//                popup.setOnMenuItemClickListener(DoctorHome.this);
-//                popup.inflate(R.menu.popup_menu);
-//                popup.show();
-//            }
-//        });
+        textID = (TextView) findViewById(R.id.user_id);
+        search = findViewById(R.id.search);
+        dataInput = findViewById(R.id.dataInput);
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
-        final String id = sharedPreferences.getString("user_id", null);
-
-        textID.setText("Doctor ID - " + id);
+        final String user_id = sharedPreferences.getString("user_id", null);
 
         final LinearLayout drives_layout = (LinearLayout) findViewById(R.id.drives);
 
-        RequestQueue queue = Volley.newRequestQueue(DoctorHome.this);
+        RequestQueue queue = Volley.newRequestQueue(Appointments.this);
 
-        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/viewCampaign/viewFutureCampaigns";
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                RequestQueue queue = Volley.newRequestQueue(Appointments.this);
+                final String drive_id = dataInput.getText().toString();
+                String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/viewCampaign/viewCampaignByID/" + drive_id;
 
 
+                //request object
+                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //Toast.makeText(Activity5.this, response.toString(), Toast.LENGTH_SHORT).show();
+                        JSONObject returnedDrive = (JSONObject) response;
+                        Intent intent = new Intent(getApplicationContext(), DoctorMapsActivity.class);
+                        intent.putExtra("user_id", user_id);
+
+                        intent.putExtra("currentDrive", String.valueOf(returnedDrive));
+                        startActivity(intent);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Appointments.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                // Add the request to the RequestQueue.
+                queue.add(request);
+
+            }
+        });
+
+        String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/doctorAttendsBloodDrive/doctorAppointments/";
+        url = url + user_id;
+
+//        Toast.makeText(this, url, Toast.LENGTH_SHORT).show();
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -83,7 +111,7 @@ public class DoctorHome extends AppCompatActivity{
 
                 for(int i=0; i<returnedDrives.length(); i++){
 
-                    LinearLayout linearLayout = new LinearLayout(DoctorHome.this);
+                    LinearLayout linearLayout = new LinearLayout(Appointments.this);
 
                     linearLayout.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -96,7 +124,7 @@ public class DoctorHome extends AppCompatActivity{
                     linearLayout.setLayoutParams(params);
 
                     /////
-                    TextView driveID = new TextView(DoctorHome.this);
+                    TextView driveID = new TextView(Appointments.this);
 
                     LinearLayout.LayoutParams paramsDrive = new LinearLayout.LayoutParams(
                             dpTOpx(20),
@@ -109,7 +137,7 @@ public class DoctorHome extends AppCompatActivity{
                     driveID.setMovementMethod(LinkMovementMethod.getInstance());
 
                     //////
-                    TextView location = new TextView(DoctorHome.this);
+                    TextView location = new TextView(Appointments.this);
 
                     LinearLayout.LayoutParams paramsLocation = new LinearLayout.LayoutParams(
                             dpTOpx(80),
@@ -120,7 +148,7 @@ public class DoctorHome extends AppCompatActivity{
                     location.setLayoutParams(paramsLocation);
 
                     //////
-                    TextView date = new TextView(DoctorHome.this);
+                    TextView date = new TextView(Appointments.this);
 
                     LinearLayout.LayoutParams paramsDate = new LinearLayout.LayoutParams(
                             dpTOpx(80),
@@ -132,7 +160,7 @@ public class DoctorHome extends AppCompatActivity{
 
 
                     //////
-                    TextView start_time = new TextView(DoctorHome.this);
+                    TextView start_time = new TextView(Appointments.this);
 
                     LinearLayout.LayoutParams paramsStart_time = new LinearLayout.LayoutParams(
                             dpTOpx(60),
@@ -143,7 +171,7 @@ public class DoctorHome extends AppCompatActivity{
                     start_time.setLayoutParams(paramsStart_time);
 
                     //////
-                    TextView end_time = new TextView(DoctorHome.this);
+                    TextView end_time = new TextView(Appointments.this);
 
                     LinearLayout.LayoutParams paramsEnd_time = new LinearLayout.LayoutParams(
                             dpTOpx(60),
@@ -173,7 +201,7 @@ public class DoctorHome extends AppCompatActivity{
                     linearLayout.addView(start_time);
                     linearLayout.addView(end_time);
 
-                    drives_layout.addView(linearLayout, 3+i);
+                    drives_layout.addView(linearLayout, 2+i);
 
                 }
 
@@ -183,34 +211,27 @@ public class DoctorHome extends AppCompatActivity{
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(DoctorHome.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Appointments.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
         // Add the request to the RequestQueue.
         queue.add(request);
+        
+        
+        
+        
+        
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //Initialize and assign variable
+        
+        
+        
+        
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //set home selected
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.appointments);
 
         //perform ItemSelectedListener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -222,48 +243,33 @@ public class DoctorHome extends AppCompatActivity{
 
                     case R.id.appointments:
                         intent = new Intent(getApplicationContext(), Appointments.class);
+                        intent.putExtra("user_id", user_id);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.home:
                         intent = new Intent(getApplicationContext(), DoctorHome.class);
+                        intent.putExtra("user_id", user_id);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profile:
                         intent = new Intent(getApplicationContext(), ViewProfileDoctor.class);
+                        intent.putExtra("user_id", user_id);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
-
-
 
                 }
                 return false;
             }
         });
+
+
+
     }
 
-//    @Override
-//    public boolean onMenuItemClick(MenuItem item) {
-//        Toast.makeText(this, "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
-//        switch (item.getItemId()) {
-//
-//            case R.id.edit_profile:
-//                Intent myintent1 = new Intent(DoctorHome.this, EditProfileActivity.class);
-//                startActivity(myintent1);
-//                return false;
-//
-//            case R.id.log_out:
-//                Intent myintent2 = new Intent(DoctorHome.this, MainActivity.class);
-//                startActivity(myintent2);
-//                return false;
-//
-//            default:
-//                return false;
-//        }
-//    }
 
 }
