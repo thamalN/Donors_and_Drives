@@ -3,6 +3,8 @@
     package="com.example.donorsanddrives">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -39,11 +41,6 @@
         <activity android:name=".doctor_acc" />
         <activity android:name=".manage_accs" />
         <activity android:name=".admin_home" />
-
-<!--        <meta-data-->
-<!--            android:name="com.google.android.geo.API_KEY"-->
-<!--            android:value="AIzaSyCSQMiVY30Lx5k6dROjWz2cjhdAHuIdXPA" />-->
-
         <activity android:name=".accEditSuccess" />
         <activity android:name=".viewMedicalDetails" />
         <activity android:name=".profile" />

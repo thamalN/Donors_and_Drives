@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editDocAcc">
+    tools:context=".managerProfile">
 
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="104dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="9dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -28,33 +29,32 @@
             app:srcCompat="@drawable/user" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="3"
             android:gravity="center_vertical"
-            android:text="Campaign Manager ID - "
+            android:text="User ID - "
             android:textSize="24sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="380dp"
-        android:layout_height="322dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="5dp"
+        android:id="@+id/linearLayout8"
+        android:layout_width="389dp"
+        android:layout_height="499dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_weight="1"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -70,52 +70,22 @@
                     android:id="@+id/textView22"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-                <EditText
-                    android:id="@+id/name"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:inputType="textPersonName"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/textView17"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="Email"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
 
-                <EditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:inputType="textPersonName"
-                    android:textSize="18sp" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -131,24 +101,92 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/textView23"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Registered Date"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:inputType="number"
+                    android:text="Email"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
                     android:text="Contact Details"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-                <EditText
-                    android:id="@+id/contact"
+                <TextView
+                    android:id="@+id/textView21"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:inputType="number|textPersonName"
-                    android:textSize="18sp" />
+                    android:gravity="center_vertical"
+                    android:textSize="18sp"
+                    android:textStyle="italic" />
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -160,17 +198,21 @@
 
             <Button
                 android:id="@+id/button7"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/colorPrimary"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="Save Changes"
+                android:text="Edit Profile"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

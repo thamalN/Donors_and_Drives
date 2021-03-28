@@ -41,7 +41,6 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void loggedIn() {
-        //String url = "http://192.168.1.101:8080/DonorsAndDrives_war_exploded/authentication";
 
         String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/authentication/login";
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -63,23 +62,29 @@ public class MainActivity2 extends AppCompatActivity {
                     try {
                         JSONObject object = new JSONObject(response);
                         int flag = object.getInt("user_flag");
-
                         int id = object.getInt("user_id");
-                        SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("user_id", Integer.toString(id));
-                        editor.apply();
+                        int online = object.getInt("online");
 
-                        if (flag == 1) {
+                        SharedPreferences sharedPreferences1 = getSharedPreferences("sharedId", MODE_PRIVATE);
+                        SharedPreferences.Editor editor1 = sharedPreferences1.edit();
+                        editor1.putString("user_id", String.valueOf(id));
+                        editor1.apply();
+
+                        if(online == 1) {
+                            Toast.makeText(getApplicationContext(), "You are already logged in from another device", Toast.LENGTH_SHORT).show();
+                        } else if (flag == 1) {
                             Intent intent = new Intent(getApplicationContext(), admin_home.class);
-                            startActivity(intent);
-                        } else if (flag == 3) {
-                            Intent intent = new Intent(getApplicationContext(), donorHome.class);
                             startActivity(intent);
                         } else if (flag == 2) {
                           Intent intent = new Intent(getApplicationContext(), DoctorHome.class);
                           startActivity(intent);
-                        } else {
+                        } else if (flag == 3) {
+                            Intent intent = new Intent(getApplicationContext(), donorHome.class);
+                            startActivity(intent);
+                        } else if (flag == 4) {
+                            Intent intent = new Intent(getApplicationContext(), cmanagerHome.class);
+                            startActivity(intent);
+                        }else {
                            Toast.makeText(getApplicationContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
