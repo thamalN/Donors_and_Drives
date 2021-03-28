@@ -56,7 +56,7 @@ tools:context=".editDonAcc">
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/firstname"
+                android:id="@+id/name"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -64,35 +64,10 @@ tools:context=".editDonAcc">
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="First Name" />
+                android:text="Name" />
 
             <EditText
-                android:id="@+id/firstnamet"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/lastname"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginRight="40dp"
-                android:textSize="15dp"
-                android:text="Last Name"/>
-
-            <EditText
-                android:id="@+id/lastnamet"
+                android:id="@+id/namet"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -120,8 +95,7 @@ tools:context=".editDonAcc">
                 android:id="@+id/gendert"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="" />
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 
@@ -145,8 +119,7 @@ tools:context=".editDonAcc">
                 android:id="@+id/birthdayt"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:hint="" />
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 
@@ -170,6 +143,30 @@ tools:context=".editDonAcc">
                 android:id="@+id/aget"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/streetno"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="15dp"
+                android:text="Street No"/>
+
+            <EditText
+                android:id="@+id/streetnot"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="" />
 
@@ -181,7 +178,7 @@ tools:context=".editDonAcc">
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/address"
+                android:id="@+id/street"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -189,14 +186,61 @@ tools:context=".editDonAcc">
                 android:layout_marginBottom="3dp"
                 android:layout_marginRight="40dp"
                 android:textSize="15dp"
-                android:text="Address"/>
+                android:text="Street"/>
 
             <EditText
-                android:id="@+id/addresst"
+                android:id="@+id/streett"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:hint="" />
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="15dp"
+                android:text="City"/>
+
+            <EditText
+                android:id="@+id/cityt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/province"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="15dp"
+                android:text="Province"/>
+
+            <EditText
+                android:id="@+id/provincet"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 
@@ -220,8 +264,31 @@ tools:context=".editDonAcc">
                 android:id="@+id/emailt"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/contact"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:hint="" />
+                android:layout_marginBottom="3dp"
+                android:layout_marginRight="40dp"
+                android:textSize="15dp"
+                android:text="Contact"/>
+
+            <EditText
+                android:id="@+id/contactt"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
 

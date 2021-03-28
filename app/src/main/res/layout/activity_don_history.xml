@@ -47,7 +47,7 @@
 
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView00"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
@@ -80,7 +80,7 @@
             app:srcCompat="@drawable/user" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
@@ -116,29 +116,47 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/TextView05"
+                    android:id="@+id/TextView2"
                     android:text="Donation Id"
                     android:textStyle="bold"
                     android:typeface="serif"></TextView>
 
                 <TextView
-                    android:id="@+id/TextView04"
-                    android:text="DateTime"
+                    android:id="@+id/TextView3"
+                    android:text="Campaign Id"
                     android:textStyle="bold"
                     android:typeface="serif"></TextView>
 
                 <TextView
-                    android:id="@+id/TextView03"
-                    android:text="Donation Type"
+                    android:id="@+id/TextView4"
+                    android:text="Station Id"
                     android:textStyle="bold"
                     android:typeface="serif"></TextView>
 
                 <TextView
-                    android:id="@+id/TextView02"
+                    android:id="@+id/TextView5"
+                    android:text="Date"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+
+                <TextView
+                    android:id="@+id/TextView6"
+                    android:text="Time"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+
+                <TextView
+                    android:id="@+id/TextView7"
                     android:text="Amount"
                     android:textStyle="bold"
                     android:typeface="serif"></TextView>
 
+                <TextView
+                    android:id="@+id/TextView8"
+                    android:text="Comments"
+                    android:textStyle="bold"
+                    android:typeface="serif"></TextView>
+
             </TableRow>
 
             <TableRow
@@ -146,43 +164,32 @@
                 android:id="@+id/tableRow2"
                 android:layout_width="match_parent">
                 <TextView
-                    android:text="1"
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView9"
                     android:textStyle="bold"></TextView>
                 <TextView
-                    android:id="@+id/textView3"
-                    android:text=""
-                    android:gravity="center_horizontal"></TextView>
-                <TextView
-                    android:text=""
-                    android:id="@+id/textView4"
-                    android:gravity="center_horizontal"></TextView>
-                <TextView
-                    android:text=""
-                    android:id="@+id/textView5"
+                    android:id="@+id/textView10"
                     android:gravity="center_horizontal"></TextView>
 
-            </TableRow>
-            <TableRow
-                android:layout_height="wrap_content"
-                android:id="@+id/tableRow2"
-                android:layout_width="match_parent">
                 <TextView
-                    android:text="2"
-                    android:id="@+id/textView2"
-                    android:textStyle="bold"></TextView>
-                <TextView
-                    android:text=""
-                    android:id="@+id/textView3"
+                    android:id="@+id/textView11"
                     android:gravity="center_horizontal"></TextView>
+
                 <TextView
-                    android:text=""
-                    android:id="@+id/textView4"
+                    android:id="@+id/textView12"
                     android:gravity="center_horizontal"></TextView>
+
                 <TextView
-                    android:text=""
-                    android:id="@+id/textView5"
+                    android:id="@+id/textView13"
                     android:gravity="center_horizontal"></TextView>
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:gravity="center_horizontal"></TextView>
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:gravity="center_horizontal"></TextView>
+
 
             </TableRow>
         </TableLayout>
