@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -57,8 +58,8 @@ public class Appointments extends AppCompatActivity {
         search = findViewById(R.id.search);
         dataInput = findViewById(R.id.dataInput);
 
-        final Intent recIntent = getIntent();
-        final String user_id = String.valueOf(recIntent.getStringExtra("user_id"));
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
+        final String user_id = sharedPreferences.getString("user_id", null);
 
         final LinearLayout drives_layout = (LinearLayout) findViewById(R.id.drives);
 

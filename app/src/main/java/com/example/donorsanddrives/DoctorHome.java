@@ -1,6 +1,7 @@
 package com.example.donorsanddrives;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -62,9 +63,10 @@ public class DoctorHome extends AppCompatActivity{
 //            }
 //        });
 
-        final Intent recIntent = getIntent();
-        final String user_id = String.valueOf(recIntent.getStringExtra("user_id"));
-        textID.setText("Doctor ID - " + user_id);
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
+        final String id = sharedPreferences.getString("user_id", null);
+
+        textID.setText("Doctor ID - " + id);
 
         final LinearLayout drives_layout = (LinearLayout) findViewById(R.id.drives);
 
@@ -220,21 +222,18 @@ public class DoctorHome extends AppCompatActivity{
 
                     case R.id.appointments:
                         intent = new Intent(getApplicationContext(), Appointments.class);
-                        intent.putExtra("user_id", user_id);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.home:
                         intent = new Intent(getApplicationContext(), DoctorHome.class);
-                        intent.putExtra("user_id", user_id);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profile:
                         intent = new Intent(getApplicationContext(), ViewProfileDoctor.class);
-                        intent.putExtra("user_id", user_id);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                         return true;

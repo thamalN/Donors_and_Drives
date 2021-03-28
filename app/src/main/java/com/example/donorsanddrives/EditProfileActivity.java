@@ -1,6 +1,7 @@
 package com.example.donorsanddrives;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -33,8 +34,8 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-        final Intent recIntent = getIntent();
-        final String user_id = String.valueOf(recIntent.getStringExtra("user_id"));
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
+        final String user_id = sharedPreferences.getString("user_id", null);
         final String[] Name = new String[1];
 
 //        Toast.makeText(this, user_id, Toast.LENGTH_SHORT).show();

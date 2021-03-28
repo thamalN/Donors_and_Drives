@@ -1,6 +1,7 @@
 package com.example.donorsanddrives;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -52,9 +53,10 @@ public class Campaign extends AppCompatActivity {
         final TextView address = (TextView) findViewById(R.id.addresst);
         final CheckBox chkAttendance = (CheckBox) findViewById(R.id.attending);
 
-        final Intent recIntent = getIntent();
-        final String user_id = String.valueOf(recIntent.getStringExtra("user_id"));
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
+        final String user_id = sharedPreferences.getString("user_id", null);
 
+        final Intent recIntent = getIntent();
         final String drive_id = recIntent.getStringExtra("drive_id");
         campaign_id.setText("Campaign ID - " + drive_id);
 

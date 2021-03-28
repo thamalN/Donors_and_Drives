@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +37,9 @@ public class DoctorChangePassword extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_change_password);
 
         final Intent recIntent = getIntent();
-        final String user_id = String.valueOf(recIntent.getStringExtra("user_id"));
+
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
+        final String user_id = sharedPreferences.getString("user_id", null);
 
         Button change_password = (Button) findViewById(R.id.change_password);
 
@@ -48,6 +51,7 @@ public class DoctorChangePassword extends AppCompatActivity {
         final TextView cur_password = (TextView) findViewById(R.id.cur_passwordt);
 
         userID.setText("ID - " + user_id);
+
         name.setText("Name - " + recIntent.getStringExtra("name"));
 
         final RequestQueue queue = Volley.newRequestQueue(DoctorChangePassword.this);
