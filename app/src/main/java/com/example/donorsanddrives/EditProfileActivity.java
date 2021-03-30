@@ -5,7 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,13 +36,20 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
+//        Spinner dropdown = findViewById(R.id.spinner);
+//        String[] items = new String[]{"Northern", "North Central", "North Western", "Central", "Eastern", "Uva", "Sabaragamuwa", "Western", "Southern"};
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+//
+//        dropdown.setAdapter(adapter);
+
         SharedPreferences sharedPreferences = getSharedPreferences("sharedId", MODE_PRIVATE);
         final String user_id = sharedPreferences.getString("user_id", null);
         final String[] Name = new String[1];
 
 //        Toast.makeText(this, user_id, Toast.LENGTH_SHORT).show();
 
-        Button save = (Button) findViewById(R.id.save);
+//        Button save = (Button) findViewById(R.id.save);
         Button change_username = (Button) findViewById(R.id.change_username);
         Button change_password = (Button) findViewById(R.id.change_password);
 
@@ -96,54 +105,54 @@ public class EditProfileActivity extends AppCompatActivity {
         queue.add(request);
 
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/editDoctorProfInfo/info";
-
-                StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Intent intent = new Intent(getApplicationContext(), ViewProfileDoctor.class);
-                        intent.putExtra("user_id", user_id);
-                        startActivity(intent);
-
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(EditProfileActivity.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                }){
-
-                    @Override
-                    protected Map<String, String> getParams() {
-                        Map<String, String> params = new HashMap<>();
-                        params.put("user_id", user_id);
-                        params.put("email", email.getText().toString());
-                        params.put("contact", contact.getText().toString());
-                        params.put("street_no", street_no.getText().toString());
-                        params.put("street", street.getText().toString());
-                        params.put("city", city.getText().toString());
-                        params.put("province", province.getText().toString());
-                        params.put("hospital", hospital.getText().toString());
-
-                        return params;
-                    }
-                    @Override
-                    public Map<String, String> getHeaders() {
-                        HashMap<String, String> headers = new HashMap<>();
-                        headers.put("Content-Type", "application/x-www-form-urlencoded");
-                        return headers;
-                    }
-                };
-
-                // Add the request to the RequestQueue.
-                queue.add(request);
-
-            }
-        });
+//        save.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                String url = "http://10.0.2.2:8080/DonorsAndDrives_war_exploded/editDoctorProfInfo/info";
+//
+//                StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        Intent intent = new Intent(getApplicationContext(), ViewProfileDoctor.class);
+//                        intent.putExtra("user_id", user_id);
+//                        startActivity(intent);
+//
+//                    }
+//                }, new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError error) {
+//                        Toast.makeText(EditProfileActivity.this, "Error - " + error.toString(), Toast.LENGTH_SHORT).show();
+//                    }
+//                }){
+//
+//                    @Override
+//                    protected Map<String, String> getParams() {
+//                        Map<String, String> params = new HashMap<>();
+//                        params.put("user_id", user_id);
+//                        params.put("email", email.getText().toString());
+//                        params.put("contact", contact.getText().toString());
+//                        params.put("street_no", street_no.getText().toString());
+//                        params.put("street", street.getText().toString());
+//                        params.put("city", city.getText().toString());
+//                        params.put("province", province.getText().toString());
+//                        params.put("hospital", hospital.getText().toString());
+//
+//                        return params;
+//                    }
+//                    @Override
+//                    public Map<String, String> getHeaders() {
+//                        HashMap<String, String> headers = new HashMap<>();
+//                        headers.put("Content-Type", "application/x-www-form-urlencoded");
+//                        return headers;
+//                    }
+//                };
+//
+//                // Add the request to the RequestQueue.
+//                queue.add(request);
+//
+//            }
+//        });
 
 
         change_username.setOnClickListener(new View.OnClickListener() {
